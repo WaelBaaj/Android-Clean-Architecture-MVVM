@@ -1,0 +1,156 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'androidx.navigation.safeargs'
+
+configurations {
+    ktlint
+}
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.wa82bj.check24_mvvm"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    android {
+        lintOptions {
+            xmlReport true
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation "com.android.support:recyclerview-v7:$rootProject.support_library_version"
+    implementation "com.android.support:cardview-v7:$rootProject.support_library_version"
+    implementation "com.intuit.sdp:sdp-android:$rootProject.sdp_android_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.1.0'
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraint_layout_version"
+    // Material Design
+    implementation 'com.google.android.material:material:1.0.0'
+
+
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // Navigation
+    implementation 'android.arch.navigation:navigation-fragment-ktx:1.0.0'
+    implementation 'android.arch.navigation:navigation-ui-ktx:1.0.0'
+
+    // Room
+    implementation 'androidx.room:room-runtime:2.2.0-rc01'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation "androidx.room:room-rxjava2:2.2.0-rc01"
+    kapt "androidx.room:room-compiler:2.2.0-rc01"
+
+
+    // Gson
+    implementation "com.google.code.gson:gson:$rootProject.gson_version"
+
+    // viewModel
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.arch_lifecycle_androidx_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.arch_lifecycle_androidx_version"
+    implementation "androidx.lifecycle:lifecycle-runtime:$rootProject.arch_lifecycle_androidx_version"
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.arch_lifecycle_androidx_version"
+    implementation "androidx.lifecycle:lifecycle-reactivestreams:$rootProject.arch_lifecycle_androidx_version"
+
+
+    kapt "com.android.databinding:compiler:$rootProject.data_binding"
+
+    // Preference
+    implementation "androidx.preference:preference:$rootProject.preference_version"
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+
+    kapt "com.android.tools.build.jetifier:jetifier-core:$rootProject.jetifier_core"
+    annotationProcessor "com.android.tools.build.jetifier:jetifier-core:$rootProject.jetifier_core"
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$rootProject.glide_version"
+    implementation "com.github.bumptech.glide:okhttp3-integration:$rootProject.glide_version"
+    kapt "com.github.bumptech.glide:compiler:$rootProject.glide_version"
+
+    implementation "com.facebook.stetho:stetho:1.5.1"
+    implementation "com.facebook.stetho:stetho-okhttp3:1.5.0"
+
+    implementation "com.jakewharton.threetenabp:threetenabp:1.1.0"
+    implementation "com.jakewharton.timber:timber:4.7.1"
+    ktlint "com.github.shyiko:ktlint:0.29.0"
+
+    implementation 'com.airbnb.android:lottie:3.0.0-beta2'
+    implementation 'com.android.support:multidex:1.0.3'
+
+    // Beter date time support
+    implementation "com.jakewharton.threetenabp:threetenabp:$rootProject.threetenabp_version"
+
+    // OkHttp
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttp3_interceptor_version"
+
+    //RXJava
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.11'
+    implementation "io.reactivex.rxjava2:rxkotlin:2.4.0"
+
+    implementation "com.google.dagger:dagger:$rootProject.dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$rootProject.dagger_version"
+    implementation "com.google.dagger:dagger-android:$rootProject.dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$rootProject.dagger_version"
+    // if you use the support libraries
+    kapt "com.google.dagger:dagger-android-processor:$rootProject.dagger_version"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofit_version"
+    implementation "com.squareup.retrofit2:retrofit-mock:$rootProject.retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofit_version"
+    implementation "com.squareup.retrofit2:converter-moshi:$rootProject.retrofit_version"
+
+
+}
+
+task ktlint(type: JavaExec, group: "verification") {
+    description = "Check Kotlin code style."
+    classpath = configurations.ktlint
+    main = "com.github.shyiko.ktlint.Main"
+    args "src/**/*.kt", "--reporter=plain", "--reporter=checkstyle,output=${buildDir}/reports/ktlint.xml"
+}
+check.dependsOn ktlint
+
+task ktlintFormat(type: JavaExec, group: "formatting") {
+    description = "Fix Kotlin code style deviations."
+    classpath = configurations.ktlint
+    main = "com.github.shyiko.ktlint.Main"
+    args "-F", "src/**/*.kt"
+}

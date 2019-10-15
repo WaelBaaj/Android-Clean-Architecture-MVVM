@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/productsFragment">
+
+    <fragment
+        android:id="@+id/productsFragment"
+        android:name="com.wa82bj.check24_mvvm.ui.main.allProduct.ProductsFragment"
+        android:label="All Products" >
+        <action
+            android:id="@+id/action_ToDetailActivity"
+            app:destination="@id/detailActivity" />
+        <argument
+            android:name="productId"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_to_webViewActivity"
+            app:destination="@id/webViewActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/availableFragment"
+        android:name="com.wa82bj.check24_mvvm.ui.main.available.AvailableFragment"
+        android:label="Available"
+        tools:layout="@layout/available_fragment" >
+        <action
+            android:id="@+id/action_ToDetailActivity"
+            app:destination="@id/detailActivity" />
+        <action
+            android:id="@+id/action_to_webViewActivity"
+            app:destination="@id/webViewActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/detailActivity"
+        android:name="com.wa82bj.check24_mvvm.ui.detail.DetailActivity"
+        android:label="DetailActivity" />
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.wa82bj.check24_mvvm.ui.main.favorite.FavoriteFragment"
+        android:label="Favorite">
+        <action
+            android:id="@+id/action_ToDetailActivity"
+            app:destination="@id/detailActivity" />
+        <action
+            android:id="@+id/action_to_webViewActivity"
+            app:destination="@id/webViewActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/webViewActivity"
+        android:name="com.wa82bj.check24_mvvm.ui.webview.WebViewActivity"
+        android:label="WebViewActivity" />
+</navigation>

@@ -1,0 +1,30 @@
+package com.wa82bj.check24_mvvm.data.db
+
+import com.wa82bj.check24_mvvm.data.api.response.check24Response.HeaderEntity
+import com.wa82bj.check24_mvvm.data.api.response.check24Response.ProductEntity
+import com.wa82bj.check24_mvvm.data.model.HeaderModel
+import com.wa82bj.check24_mvvm.data.model.ProductModel
+import io.reactivex.Flowable
+import io.reactivex.Single
+
+fun Flowable<List<ProductEntity>>.toProducts(): Flowable<List<ProductModel>> = map {
+    return@map it.toProducts()
+}
+
+fun Single<HeaderEntity>.toHeader(): Single<HeaderModel> =
+     toHeader()
+
+
+fun List<ProductEntity>.toProducts(): List<ProductModel> =
+    map { ProductModel(it.available,it.fav  , it.description,it.id, it.imageURL, it.longDescription ,it.name ,
+        it.price,it.rating  , it.releaseDate,it.type) }
+
+fun HeaderEntity.toHeader(): HeaderModel =
+     HeaderModel(headerTitle,headerDescription)
+
+fun List<ProductEntity>.toAvailableProducts(): List<ProductModel> =
+    map { ProductModel(
+        it.available ,it.fav, it.description,it.id, it.imageURL, it.longDescription ,it.name ,
+        it.price,it.rating  , it.releaseDate,it.type)
+    }
+

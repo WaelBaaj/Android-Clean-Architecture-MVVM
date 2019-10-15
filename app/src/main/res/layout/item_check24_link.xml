@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="retry"
+            type="com.wa82bj.check24_mvvm.ui.common.RetryAndWebWiewListener" />
+
+        <variable
+            name="isError"
+            type="Boolean" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?android:selectableItemBackground"
+            android:gravity="center"
+            android:onClick="@{() -> retry.toWebView()}"
+            android:text="© 2019 CHECK24 GmbH"
+            android:textColor="@color/textColorPrimary"
+            android:visibility="@{isError ? View.VISIBLE: View.GONE, default = visible}" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lav_thumbUp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                app:lottie_autoPlay="true"
+                app:lottie_speed="1.90"
+                app:lottie_rawRes="@raw/loading"
+                android:visibility="@{isError ? View.GONE: View.VISIBLE, default = gone}"
+                />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
