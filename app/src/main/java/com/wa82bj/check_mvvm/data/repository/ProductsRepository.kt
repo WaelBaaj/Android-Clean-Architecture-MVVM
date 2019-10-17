@@ -22,7 +22,6 @@ interface ProductsRepository {
     fun loadFavoriteProducts(): Single<List<ProductModel>>
 
     val header: Single<HeaderModel>
-    fun loadHeader(): Single<HeaderModel>
     fun loadHeaderFromApi(): Single<HeaderModel>
     fun saveHeader(header: HeaderEntity): Completable
 }

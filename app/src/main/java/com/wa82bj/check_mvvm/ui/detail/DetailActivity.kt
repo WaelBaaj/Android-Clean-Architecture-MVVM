@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.wa82bj.check_mvvm.R
 import com.wa82bj.check_mvvm.databinding.ActivityProductDetailBinding
+import com.wa82bj.check_mvvm.ui.main.MainActivity
 import com.wa82bj.check_mvvm.ui.webview.WebViewActiviy
 import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
@@ -52,36 +53,36 @@ class DetailActivity : DaggerAppCompatActivity() {
 
             if (it.fav == true){
                 viewModel.checkFavoriteStatus(1,photoId)
+                binding.lottieLike.visibility = VISIBLE
+                binding.favoriteFab.text = "UnFavorite"
             }else{
                 viewModel.checkFavoriteStatus(0,photoId)
+                binding.lottieLike.visibility = GONE
+                binding.favoriteFab.text = "Favorite"
             }
         })
 
         viewModel.isFavorite.observe(this, Observer {
             it?.let {
 
-                if (it == 0){
-                    binding.lottieLike.visibility = GONE
-                    binding.detailFab.setImageResource(
-
-                            R.drawable.ic_star_white_24dp)
-                }else
-                    binding.lottieLike.visibility = VISIBLE
-                binding.detailFab.setImageResource(
-
-                    R.drawable.ic_star_full_vector
-                )
             }
         })
 
-        binding.detailFab.setOnClickListener {
-            viewModel.updateFavoriteStatus()
-            if (viewModel.isFavorite.equals(0)){
-                binding.detailFab.setImageResource(
+        binding.favoriteFab.setOnClickListener {
 
-                    R.drawable.ic_star_white_24dp)
-                }
+
+            if (binding.favoriteFab.text == "Favorite"){
+                binding.favoriteFab.text = "UnFavorite"
+                binding.lottieLike.visibility = VISIBLE
+                viewModel.updateFavoriteStatus()
+            }else{
+                binding.favoriteFab.text = "Favorite"
+                binding.lottieLike.visibility = GONE
+                viewModel.updateFavoriteStatus()
+            }
+
         }
+
         binding.linkTxt.setOnClickListener {
 
             val intent = Intent(this, WebViewActiviy::class.java)
@@ -103,6 +104,13 @@ class DetailActivity : DaggerAppCompatActivity() {
 
     companion object {
         private val KEY_PRODUCT_ID = "KEY_PRODUCT_ID"
+    }
+
+    override fun onBackPressed() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish()
+
     }
 
 }

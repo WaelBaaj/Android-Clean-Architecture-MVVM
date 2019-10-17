@@ -39,14 +39,11 @@ class ProductsDataRepository @Inject constructor(
         })
 
     override fun loadProductsFromDb(): Single<List<ProductModel>> =
-        Single.zip(loadProductsDb(), loadProductsDb(), BiFunction { t1, t2 ->
-            if (t1.isNotEmpty()) {
-                val products = ArrayList<ProductModel>()
-                products.addAll(t1)
-                return@BiFunction products.toList()
-            } else return@BiFunction t2
-        })
-
+        checkDatabase.getProductsLessThanAndEqualPage()
+            .map {
+                return@map it.toProducts()
+            }
+            .subscribeOn(schedulerProvider.io())
 
 
 
@@ -85,15 +82,6 @@ class ProductsDataRepository @Inject constructor(
         get() = checkDatabase.getHeader()
             .toHeader()
 
-    override fun loadHeader(): Single<HeaderModel> =
-        Single.zip(loadHeaderFromApi(), loadHeaderFromApi(), BiFunction { t1, t2 ->
-
-            val header = HeaderModel()
-
-            return@BiFunction header
-
-        })
-
     override fun loadHeaderFromApi(): Single<HeaderModel> =
         api.loadTrendingProducts()
             .map {
@@ -116,18 +104,8 @@ class ProductsDataRepository @Inject constructor(
         }
 
 
-    // Available Data
+    // Available Products
     override fun loadAvailableProducts(): Single<List<ProductModel>> =
-        Single.zip(loadAvailableProductsDb(), loadAvailableProductsDb()
-            , BiFunction { t1, t2 ->
-                if (t1.isNotEmpty()) {
-                    val products = ArrayList<ProductModel>()
-                    products.addAll(t1)
-                    return@BiFunction products.toList()
-                } else return@BiFunction t2
-            })
-
-    private fun loadAvailableProductsDb(): Single<List<ProductModel>> =
         checkDatabase.getAvailableProductsWithTrueValue()
             .map {
                 return@map it.toAvailableProducts()
@@ -135,17 +113,8 @@ class ProductsDataRepository @Inject constructor(
             .subscribeOn(schedulerProvider.io())
 
 
+    // Favorite Products
     override fun loadFavoriteProducts(): Single<List<ProductModel>> =
-        Single.zip(loadFavoriteProductsDb(), loadFavoriteProductsDb()
-            , BiFunction { t1, t2 ->
-                if (t1.isNotEmpty()) {
-                    val products = ArrayList<ProductModel>()
-                    products.addAll(t1)
-                    return@BiFunction products.toList()
-                } else return@BiFunction t2
-            })
-
-    private fun loadFavoriteProductsDb(): Single<List<ProductModel>> =
         checkDatabase.getFavoriteProducts()
             .map {
                 return@map it.toAvailableProducts()

@@ -26,6 +26,10 @@ import dagger.android.support.DaggerFragment
 import timber.log.Timber
 import javax.inject.Inject
 
+/*
+** the Available list will download from Room db because the are no end point
+* to get Available items from web server
+*/
 
 class AvailableFragment : DaggerFragment(), RetryAndWebWiewListener {
 
@@ -57,13 +61,15 @@ class AvailableFragment : DaggerFragment(), RetryAndWebWiewListener {
         override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
             super.onViewCreated(view, savedInstanceState)
             initRecyclerView()
+
+            // observe available Products from DB
             availableViewModel.availableProduct.observe(viewLifecycleOwner
                 , Observer { result ->
                 when (result) {
                     is Result.Success -> {
                         adapter.submitList(result.data)
                         adapter.onFailure(false)
-                        Log.d("TAAG","result is : "+result)
+
                     }
                     is Result.Failure -> {
                         adapter.onFailure(true)
@@ -81,6 +87,7 @@ class AvailableFragment : DaggerFragment(), RetryAndWebWiewListener {
         @SuppressLint("LogNotTimber")
         private fun initRecyclerView() {
 
+            // when click on items in RecyclerView go to DetailActivity and take product Id
             val adapter = ProductsAdapter(appExecutors, this) {
 
                 val bundle = bundleOf("KEY_PRODUCT_ID" to it.id)
@@ -127,6 +134,7 @@ class AvailableFragment : DaggerFragment(), RetryAndWebWiewListener {
             availableViewModel.retry()
         }
 
+        // when click on"CHECK LINK" go to WebViewActivity
         override fun toWebView() {
             view?.findNavController()?.navigate(R.id.action_to_webViewActivity)
     }

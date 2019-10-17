@@ -27,6 +27,11 @@ import timber.log.Timber
 import javax.inject.Inject
 
 
+/*
+** the favorite list will download from Room db because the are no end point
+* to get favorite items from web server
+*/
+
 class FavoriteFragment : DaggerFragment(), RetryAndWebWiewListener {
 
     @Inject

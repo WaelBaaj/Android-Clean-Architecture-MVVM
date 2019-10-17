@@ -83,6 +83,7 @@ class ProductsViewModel @Inject constructor(
 
 
 
+    // Check if there is Internet or not
     fun isConnected():Boolean {
         val isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting
         return !isConnected
