@@ -1,4 +1,4 @@
-package com.wa82bj.check24_mvvm.ui.detail
+package com.wa82bj.check_mvvm.ui.detail
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,9 +9,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-import com.wa82bj.check24_mvvm.R
-import com.wa82bj.check24_mvvm.databinding.ActivityProductDetailBinding
-import com.wa82bj.check24_mvvm.ui.webview.WebViewActivity
+import com.wa82bj.check_mvvm.R
+import com.wa82bj.check_mvvm.databinding.ActivityProductDetailBinding
+import com.wa82bj.check_mvvm.ui.webview.WebViewActiviy
 import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
@@ -84,7 +84,7 @@ class DetailActivity : DaggerAppCompatActivity() {
         }
         binding.linkTxt.setOnClickListener {
 
-            val intent = Intent(this, WebViewActivity::class.java)
+            val intent = Intent(this, WebViewActiviy::class.java)
             startActivity(intent)
         }
 

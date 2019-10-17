@@ -1,11 +1,11 @@
-package com.wa82bj.check24_mvvm.di
+package com.wa82bj.check_mvvm.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.wa82bj.check24_mvvm.ui.main.allProduct.ProductsViewModel
-import com.wa82bj.check24_mvvm.ui.main.available.AvailableViewModel
-import com.wa82bj.check24_mvvm.ui.main.favorite.FavoriteViewModel
-import com.wa82bj.check24_mvvm.vmFactory.ViewModelFactory
+import com.wa82bj.check_mvvm.ui.main.allProduct.ProductsViewModel
+import com.wa82bj.check_mvvm.ui.main.available.AvailableViewModel
+import com.wa82bj.check_mvvm.ui.main.favorite.FavoriteViewModel
+import com.wa82bj.check_mvvm.vmFactory.ViewModelFactory
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap

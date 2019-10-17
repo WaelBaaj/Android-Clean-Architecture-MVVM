@@ -1,4 +1,4 @@
-package com.wa82bj.check24_mvvm.di
+package com.wa82bj.check_mvvm.di
 
 import androidx.lifecycle.ViewModel
 import dagger.MapKey

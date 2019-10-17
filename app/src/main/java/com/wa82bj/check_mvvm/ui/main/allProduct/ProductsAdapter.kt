@@ -1,4 +1,4 @@
-package com.wa82bj.check24_mvvm.ui.main.allProduct
+package com.wa82bj.check_mvvm.ui.main.allProduct
 
 import android.os.Build
 import android.view.LayoutInflater
@@ -7,14 +7,14 @@ import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DiffUtil
-import com.wa82bj.check24_mvvm.AppExecutors
-import com.wa82bj.check24_mvvm.R
-import com.wa82bj.check24_mvvm.data.model.ProductModel
-import com.wa82bj.check24_mvvm.databinding.ItemCheck24LinkBinding
-import com.wa82bj.check24_mvvm.databinding.ItemRowLeftBinding
-import com.wa82bj.check24_mvvm.databinding.ItemRowRightBinding
-import com.wa82bj.check24_mvvm.ui.common.RetryAndWebWiewListener
-import com.wa82bj.check24_mvvm.ui.common.adapter.DataBoundListCustomAdapter
+import com.wa82bj.check_mvvm.AppExecutors
+import com.wa82bj.check_mvvm.R
+import com.wa82bj.check_mvvm.data.model.ProductModel
+import com.wa82bj.check_mvvm.databinding.ItemCheckLinkBinding
+import com.wa82bj.check_mvvm.databinding.ItemRowLeftBinding
+import com.wa82bj.check_mvvm.databinding.ItemRowRightBinding
+import com.wa82bj.check_mvvm.ui.common.RetryAndWebWiewListener
+import com.wa82bj.check_mvvm.ui.common.adapter.DataBoundListCustomAdapter
 
 class ProductsAdapter(
 
@@ -49,11 +49,11 @@ class ProductsAdapter(
 
             ItemType.LAYOUT_RIGHT.value -> R.layout.item_row_right
 
-            ItemType.MORE.value -> R.layout.item_check24_link
+            ItemType.MORE.value -> R.layout.item_check_link
 
             ItemType.LAYOUT_LEFT.value -> R.layout.item_row_left
 
-            else -> R.layout.item_check24_link
+            else -> R.layout.item_check_link
         }
 
         return DataBindingUtil.inflate(
@@ -81,7 +81,7 @@ class ProductsAdapter(
 
 
             }
-            is ItemCheck24LinkBinding -> {
+            is ItemCheckLinkBinding -> {
                 binding.retry = retryAndWebWiewListener
                 binding.isError = isError
             }

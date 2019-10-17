@@ -1,8 +1,8 @@
-package com.wa82bj.check24_mvvm.di
+package com.wa82bj.check_mvvm.di
 
 import com.facebook.stetho.okhttp3.StethoInterceptor
-import com.wa82bj.check24_mvvm.data.api.Check24Api
-import com.wa82bj.check24_mvvm.util.Constants.BASE_URL
+import com.wa82bj.check_mvvm.data.api.CheckApi
+import com.wa82bj.check_mvvm.util.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoSet
@@ -58,6 +58,6 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    fun provideCheck24Api(retrofit: Retrofit): Check24Api =
-        retrofit.create(Check24Api::class.java)
+    fun provideCheckApi(retrofit: Retrofit): CheckApi =
+        retrofit.create(CheckApi::class.java)
 }

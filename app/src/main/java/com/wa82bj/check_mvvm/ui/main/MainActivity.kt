@@ -1,4 +1,4 @@
-package com.wa82bj.check24_mvvm.ui.main
+package com.wa82bj.check_mvvm.ui.main
 
 import android.os.Bundle
 import android.view.Menu
@@ -6,8 +6,8 @@ import android.view.MenuItem
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
-import com.wa82bj.check24_mvvm.BaseActivity
-import com.wa82bj.check24_mvvm.R
+import com.wa82bj.check_mvvm.BaseActivity
+import com.wa82bj.check_mvvm.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity()  {

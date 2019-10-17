@@ -1,10 +1,10 @@
-package com.wa82bj.check24_mvvm.di
+package com.wa82bj.check_mvvm.di
 
 import androidx.appcompat.app.AppCompatActivity
-import com.wa82bj.check24_mvvm.ui.main.MainActivity
-import com.wa82bj.check24_mvvm.ui.main.allProduct.ProductsFragment
-import com.wa82bj.check24_mvvm.ui.main.available.AvailableFragment
-import com.wa82bj.check24_mvvm.ui.main.favorite.FavoriteFragment
+import com.wa82bj.check_mvvm.ui.main.MainActivity
+import com.wa82bj.check_mvvm.ui.main.allProduct.ProductsFragment
+import com.wa82bj.check_mvvm.ui.main.available.AvailableFragment
+import com.wa82bj.check_mvvm.ui.main.favorite.FavoriteFragment
 import dagger.Binds
 import dagger.Module
 import dagger.android.ContributesAndroidInjector

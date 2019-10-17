@@ -1,4 +1,4 @@
-package com.wa82bj.check24_mvvm.data.db
+package com.wa82bj.check_mvvm.data.db
 
 import androidx.room.TypeConverter
 import org.threeten.bp.Instant

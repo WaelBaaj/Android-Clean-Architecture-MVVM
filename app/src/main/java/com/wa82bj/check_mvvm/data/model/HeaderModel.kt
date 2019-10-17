@@ -1,4 +1,4 @@
-package com.wa82bj.check24_mvvm.data.model
+package com.wa82bj.check_mvvm.data.model
 
 data class HeaderModel (
 

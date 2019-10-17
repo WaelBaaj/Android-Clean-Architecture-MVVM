@@ -1,4 +1,4 @@
-package com.wa82bj.check24_mvvm.ui.main.allProduct
+package com.wa82bj.check_mvvm.ui.main.allProduct
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -14,16 +14,16 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.wa82bj.check24_mvvm.AppExecutors
-import com.wa82bj.check24_mvvm.R
-import com.wa82bj.check24_mvvm.autoCleared
-import com.wa82bj.check24_mvvm.data.model.ProductModel
-import com.wa82bj.check24_mvvm.databinding.ProductsFragmentBinding
-import com.wa82bj.check24_mvvm.ui.common.Result
-import com.wa82bj.check24_mvvm.ui.common.RetryAndWebWiewListener
-import com.wa82bj.check24_mvvm.ui.common.adapter.EndlessScrollListener
-import com.wa82bj.check24_mvvm.ui.main.MainActivity
-import com.wa82bj.check24_mvvm.vmFactory.ViewModelFactory
+import com.wa82bj.check_mvvm.AppExecutors
+import com.wa82bj.check_mvvm.R
+import com.wa82bj.check_mvvm.autoCleared
+import com.wa82bj.check_mvvm.data.model.ProductModel
+import com.wa82bj.check_mvvm.databinding.ProductsFragmentBinding
+import com.wa82bj.check_mvvm.ui.common.Result
+import com.wa82bj.check_mvvm.ui.common.RetryAndWebWiewListener
+import com.wa82bj.check_mvvm.ui.common.adapter.EndlessScrollListener
+import com.wa82bj.check_mvvm.ui.main.MainActivity
+import com.wa82bj.check_mvvm.vmFactory.ViewModelFactory
 import dagger.android.support.DaggerFragment
 import kotlinx.android.synthetic.main.products_fragment.*
 import timber.log.Timber

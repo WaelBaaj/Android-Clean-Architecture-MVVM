@@ -1,10 +1,10 @@
-package com.wa82bj.check24_mvvm.ui.common.adapter
+package com.wa82bj.check_mvvm.ui.common.adapter
 
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.AsyncDifferConfig
 import androidx.recyclerview.widget.DiffUtil
-import com.wa82bj.check24_mvvm.AppExecutors
+import com.wa82bj.check_mvvm.AppExecutors
 
 /*
  * Copyright (C) 2017 The Android Open Source Project

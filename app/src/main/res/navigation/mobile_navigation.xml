@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/productsFragment"
-        android:name="com.wa82bj.check24_mvvm.ui.main.allProduct.ProductsFragment"
+        android:name="com.wa82bj.check_mvvm.ui.main.allProduct.ProductsFragment"
         android:label="All Products" >
         <action
             android:id="@+id/action_ToDetailActivity"
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/availableFragment"
-        android:name="com.wa82bj.check24_mvvm.ui.main.available.AvailableFragment"
+        android:name="com.wa82bj.check_mvvm.ui.main.available.AvailableFragment"
         android:label="Available"
         tools:layout="@layout/available_fragment" >
         <action
@@ -34,11 +34,11 @@
     </fragment>
     <activity
         android:id="@+id/detailActivity"
-        android:name="com.wa82bj.check24_mvvm.ui.detail.DetailActivity"
+        android:name="com.wa82bj.check_mvvm.ui.detail.DetailActivity"
         android:label="DetailActivity" />
     <fragment
         android:id="@+id/favoriteFragment"
-        android:name="com.wa82bj.check24_mvvm.ui.main.favorite.FavoriteFragment"
+        android:name="com.wa82bj.check_mvvm.ui.main.favorite.FavoriteFragment"
         android:label="Favorite">
         <action
             android:id="@+id/action_ToDetailActivity"
@@ -49,6 +49,6 @@
     </fragment>
     <activity
         android:id="@+id/webViewActivity"
-        android:name="com.wa82bj.check24_mvvm.ui.webview.WebViewActivity"
+        android:name="com.wa82bj.check_mvvm.ui.webview.WebViewActiviy"
         android:label="WebViewActivity" />
 </navigation>

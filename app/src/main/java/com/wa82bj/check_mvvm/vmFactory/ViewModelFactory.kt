@@ -1,4 +1,4 @@
-package com.wa82bj.check24_mvvm.vmFactory
+package com.wa82bj.check_mvvm.vmFactory
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

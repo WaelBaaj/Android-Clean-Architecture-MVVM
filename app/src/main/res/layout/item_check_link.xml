@@ -5,7 +5,7 @@
 
         <variable
             name="retry"
-            type="com.wa82bj.check24_mvvm.ui.common.RetryAndWebWiewListener" />
+            type="com.wa82bj.check_mvvm.ui.common.RetryAndWebWiewListener" />
 
         <variable
             name="isError"
@@ -25,7 +25,7 @@
             android:background="?android:selectableItemBackground"
             android:gravity="center"
             android:onClick="@{() -> retry.toWebView()}"
-            android:text="© 2019 CHECK24 GmbH"
+            android:text="© 2019 CHECK GmbH"
             android:textColor="@color/textColorPrimary"
             android:visibility="@{isError ? View.VISIBLE: View.GONE, default = visible}" />
 

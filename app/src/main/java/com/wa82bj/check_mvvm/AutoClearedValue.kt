@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wa82bj.check24_mvvm
+package com.wa82bj.check_mvvm
 
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle

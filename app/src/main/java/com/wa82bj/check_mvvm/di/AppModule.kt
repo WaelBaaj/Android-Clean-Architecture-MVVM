@@ -1,16 +1,16 @@
-package com.wa82bj.check24_mvvm.di
+package com.wa82bj.check_mvvm.di
 
 import android.app.Application
 import android.content.Context
-import com.wa82bj.check24_mvvm.data.api.Check24Api
-import com.wa82bj.check24_mvvm.data.db.AppDatabase
-import com.wa82bj.check24_mvvm.data.db.CheckDatabase
-import com.wa82bj.check24_mvvm.data.repository.ProductsDataRepository
-import com.wa82bj.check24_mvvm.data.repository.ProductsRepository
-import com.wa82bj.check24_mvvm.ui.detail.DetailRepository
-import com.wa82bj.check24_mvvm.ui.detail.ProductRepositoryImp
-import com.wa82bj.check24_mvvm.util.rx.AppSchedulerProvider
-import com.wa82bj.check24_mvvm.util.rx.SchedulerProvider
+import com.wa82bj.check_mvvm.data.api.CheckApi
+import com.wa82bj.check_mvvm.data.db.AppDatabase
+import com.wa82bj.check_mvvm.data.db.CheckDatabase
+import com.wa82bj.check_mvvm.data.repository.ProductsDataRepository
+import com.wa82bj.check_mvvm.data.repository.ProductsRepository
+import com.wa82bj.check_mvvm.ui.detail.DetailRepository
+import com.wa82bj.check_mvvm.ui.detail.ProductRepositoryImp
+import com.wa82bj.check_mvvm.util.rx.AppSchedulerProvider
+import com.wa82bj.check_mvvm.util.rx.SchedulerProvider
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -40,12 +40,12 @@ object AppModule {
     @Provides
     @JvmStatic
     fun provideProductRepository(
-        check24Api: Check24Api,
+        checkApi: CheckApi,
         checkDatabase: CheckDatabase,
         schedulerProvider: SchedulerProvider
     ): ProductsRepository =
         ProductsDataRepository(
-            check24Api,
+            checkApi,
             checkDatabase,
             schedulerProvider
         )

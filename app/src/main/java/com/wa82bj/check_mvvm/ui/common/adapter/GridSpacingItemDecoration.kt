@@ -1,4 +1,4 @@
-package com.wa82bj.check24_mvvm.ui.common.adapter
+package com.wa82bj.check_mvvm.ui.common.adapter
 
 import android.graphics.Rect
 import android.view.View

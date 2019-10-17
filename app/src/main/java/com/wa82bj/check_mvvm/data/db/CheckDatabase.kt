@@ -1,7 +1,7 @@
-package com.wa82bj.check24_mvvm.data.db
+package com.wa82bj.check_mvvm.data.db
 
-import com.wa82bj.check24_mvvm.data.api.response.check24Response.HeaderEntity
-import com.wa82bj.check24_mvvm.data.api.response.check24Response.ProductEntity
+import com.wa82bj.check_mvvm.data.api.response.check24Response.HeaderEntity
+import com.wa82bj.check_mvvm.data.api.response.check24Response.ProductEntity
 import io.reactivex.Flowable
 import io.reactivex.Single
 

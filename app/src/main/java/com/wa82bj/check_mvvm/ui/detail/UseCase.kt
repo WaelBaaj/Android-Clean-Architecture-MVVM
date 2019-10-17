@@ -1,4 +1,4 @@
-package com.wa82bj.check24_mvvm.ui.detail
+package com.wa82bj.check_mvvm.ui.detail
 
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable

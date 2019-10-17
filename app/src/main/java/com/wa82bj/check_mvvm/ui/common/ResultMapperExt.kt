@@ -1,7 +1,7 @@
-package com.wa82bj.check24_mvvm.ui.common
+package com.wa82bj.check_mvvm.ui.common
 
 import androidx.annotation.CheckResult
-import com.wa82bj.check24_mvvm.util.rx.SchedulerProvider
+import com.wa82bj.check_mvvm.util.rx.SchedulerProvider
 import io.reactivex.Flowable
 import io.reactivex.Single
 

@@ -1,7 +1,7 @@
-package com.wa82bj.check24_mvvm.di
+package com.wa82bj.check_mvvm.di
 
 import android.app.Application
-import com.wa82bj.check24_mvvm.Check24App
+import com.wa82bj.check_mvvm.CheckApp
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -17,7 +17,7 @@ import javax.inject.Singleton
     MainActivityBuilder::class,
     DetailActivityBuilder::class
 ])
-interface AppComponent : AndroidInjector<Check24App> {
+interface AppComponent : AndroidInjector<CheckApp> {
 
     @Component.Builder
     interface Builder {
@@ -27,5 +27,5 @@ interface AppComponent : AndroidInjector<Check24App> {
         fun build(): AppComponent
     }
 
-    override fun inject(app: Check24App)
+    override fun inject(app: CheckApp)
 }

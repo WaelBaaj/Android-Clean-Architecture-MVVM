@@ -1,11 +1,11 @@
-package com.wa82bj.check24_mvvm
+package com.wa82bj.check_mvvm
 
 import com.jakewharton.threetenabp.AndroidThreeTen
-import com.wa82bj.check24_mvvm.di.DaggerAppComponent
+import com.wa82bj.check_mvvm.di.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
 
-open class Check24App : DaggerApplication() {
+open class CheckApp : DaggerApplication() {
 
     override fun onCreate() {
         super.onCreate()

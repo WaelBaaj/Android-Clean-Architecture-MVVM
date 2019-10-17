@@ -1,4 +1,4 @@
-package com.wa82bj.check24_mvvm.data.api.response.check24Response
+package com.wa82bj.check_mvvm.data.api.response.check24Response
 
 
 import androidx.room.Entity

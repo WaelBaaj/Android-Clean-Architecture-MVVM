@@ -1,4 +1,4 @@
-package com.wa82bj.check24_mvvm.ui.main.favorite
+package com.wa82bj.check_mvvm.ui.main.favorite
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -12,16 +12,16 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.wa82bj.check24_mvvm.AppExecutors
-import com.wa82bj.check24_mvvm.R
-import com.wa82bj.check24_mvvm.autoCleared
-import com.wa82bj.check24_mvvm.databinding.FavoriteFragmentBinding
-import com.wa82bj.check24_mvvm.ui.common.Result
-import com.wa82bj.check24_mvvm.ui.common.RetryAndWebWiewListener
-import com.wa82bj.check24_mvvm.ui.common.adapter.EndlessScrollListener
-import com.wa82bj.check24_mvvm.ui.common.adapter.GridSpacingItemDecoration
-import com.wa82bj.check24_mvvm.ui.main.allProduct.ProductsAdapter
-import com.wa82bj.check24_mvvm.vmFactory.ViewModelFactory
+import com.wa82bj.check_mvvm.AppExecutors
+import com.wa82bj.check_mvvm.R
+import com.wa82bj.check_mvvm.autoCleared
+import com.wa82bj.check_mvvm.databinding.FavoriteFragmentBinding
+import com.wa82bj.check_mvvm.ui.common.Result
+import com.wa82bj.check_mvvm.ui.common.RetryAndWebWiewListener
+import com.wa82bj.check_mvvm.ui.common.adapter.EndlessScrollListener
+import com.wa82bj.check_mvvm.ui.common.adapter.GridSpacingItemDecoration
+import com.wa82bj.check_mvvm.ui.main.allProduct.ProductsAdapter
+import com.wa82bj.check_mvvm.vmFactory.ViewModelFactory
 import dagger.android.support.DaggerFragment
 import timber.log.Timber
 import javax.inject.Inject

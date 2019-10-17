@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.wa82bj.check24_mvvm
+package com.wa82bj.check_mvvm
 
 import android.os.Handler
 import android.os.Looper

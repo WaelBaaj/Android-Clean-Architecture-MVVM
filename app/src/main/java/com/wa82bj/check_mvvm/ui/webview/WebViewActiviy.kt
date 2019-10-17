@@ -1,27 +1,27 @@
-package com.wa82bj.check24_mvvm.ui.webview
+package com.wa82bj.check_mvvm.ui.webview
 
 import android.annotation.SuppressLint
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import com.wa82bj.check24_mvvm.R
-import com.wa82bj.check24_mvvm.databinding.ActivityWebViewBinding
+import com.wa82bj.check_mvvm.R
+import com.wa82bj.check_mvvm.databinding.ActivityWebViewActiviyBinding
 
-class WebViewActivity : AppCompatActivity() {
+class WebViewActiviy : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val binding = DataBindingUtil.setContentView<ActivityWebViewBinding>(
+        val binding = DataBindingUtil.setContentView<ActivityWebViewActiviyBinding>(
             this,
-            R.layout.activity_web_view
+            R.layout.activity_web_view_activiy
         )
 
         init(binding)
     }
 
     @SuppressLint("SetJavaScriptEnabled")
-    private fun init(binding: ActivityWebViewBinding) {
+    private fun init(binding: ActivityWebViewActiviyBinding) {
         val webSiteUrl = EXTRA_URL
 
         binding.apply {

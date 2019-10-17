@@ -1,4 +1,4 @@
-package com.wa82bj.check24_mvvm
+package com.wa82bj.check_mvvm
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4

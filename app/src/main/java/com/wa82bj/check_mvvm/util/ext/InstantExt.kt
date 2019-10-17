@@ -1,4 +1,4 @@
-package com.wa82bj.check24_mvvm.util.ext
+package com.wa82bj.check_mvvm.util.ext
 
 import org.threeten.bp.Instant
 import org.threeten.bp.ZoneId

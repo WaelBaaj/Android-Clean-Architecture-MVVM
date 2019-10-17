@@ -1,7 +1,6 @@
-package com.wa82bj.check24_mvvm.di
+package com.wa82bj.check_mvvm.di
 
-import com.wa82bj.check24_mvvm.di.DetailActivityModule
-import com.wa82bj.check24_mvvm.ui.detail.DetailActivity
+import com.wa82bj.check_mvvm.ui.detail.DetailActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

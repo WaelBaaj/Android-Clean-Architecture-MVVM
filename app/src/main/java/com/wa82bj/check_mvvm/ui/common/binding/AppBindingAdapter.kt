@@ -1,4 +1,4 @@
-package com.wa82bj.check24_mvvm.ui.common.binding
+package com.wa82bj.check_mvvm.ui.common.binding
 
 import android.graphics.PorterDuff
 import android.graphics.drawable.LayerDrawable
@@ -9,7 +9,7 @@ import android.widget.RatingBar
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
-import com.wa82bj.check24_mvvm.R
+import com.wa82bj.check_mvvm.R
 
 object AppBindingAdapter {
 

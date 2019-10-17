@@ -1,15 +1,15 @@
-package com.wa82bj.check24_mvvm.data.repository
+package com.wa82bj.check_mvvm.data.repository
 
-import com.wa82bj.check24_mvvm.data.api.Check24Api
-import com.wa82bj.check24_mvvm.data.api.response.check24Response.HeaderEntity
-import com.wa82bj.check24_mvvm.data.api.response.check24Response.ProductEntity
-import com.wa82bj.check24_mvvm.data.db.CheckDatabase
-import com.wa82bj.check24_mvvm.data.db.toAvailableProducts
-import com.wa82bj.check24_mvvm.data.db.toHeader
-import com.wa82bj.check24_mvvm.data.db.toProducts
-import com.wa82bj.check24_mvvm.data.model.HeaderModel
-import com.wa82bj.check24_mvvm.data.model.ProductModel
-import com.wa82bj.check24_mvvm.util.rx.SchedulerProvider
+import com.wa82bj.check_mvvm.data.api.CheckApi
+import com.wa82bj.check_mvvm.data.api.response.check24Response.HeaderEntity
+import com.wa82bj.check_mvvm.data.api.response.check24Response.ProductEntity
+import com.wa82bj.check_mvvm.data.db.CheckDatabase
+import com.wa82bj.check_mvvm.data.db.toAvailableProducts
+import com.wa82bj.check_mvvm.data.db.toHeader
+import com.wa82bj.check_mvvm.data.db.toProducts
+import com.wa82bj.check_mvvm.data.model.HeaderModel
+import com.wa82bj.check_mvvm.data.model.ProductModel
+import com.wa82bj.check_mvvm.util.rx.SchedulerProvider
 import io.reactivex.Completable
 import io.reactivex.Flowable
 import io.reactivex.Single
@@ -18,7 +18,7 @@ import timber.log.Timber
 import javax.inject.Inject
 
 class ProductsDataRepository @Inject constructor(
-    private val api: Check24Api,
+    private val api: CheckApi,
     private val checkDatabase: CheckDatabase,
     private val schedulerProvider: SchedulerProvider
 

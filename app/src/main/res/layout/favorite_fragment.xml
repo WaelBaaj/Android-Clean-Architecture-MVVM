@@ -5,7 +5,7 @@
     <data>
         <variable
             name="favoriteModel"
-            type="com.wa82bj.check24_mvvm.ui.main.favorite.FavoriteViewModel" />
+            type="com.wa82bj.check_mvvm.ui.main.favorite.FavoriteViewModel" />
 
     </data>
 

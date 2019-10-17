@@ -5,7 +5,7 @@
     <data>
         <variable
             name="productsModel"
-            type="com.wa82bj.check24_mvvm.ui.main.allProduct.ProductsViewModel" />
+            type="com.wa82bj.check_mvvm.ui.main.allProduct.ProductsViewModel" />
 
         <variable
             name="isLoading"

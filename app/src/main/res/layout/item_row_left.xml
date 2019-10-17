@@ -7,7 +7,7 @@
 
         <variable
             name="productsModel"
-            type="com.wa82bj.check24_mvvm.data.model.ProductModel" />
+            type="com.wa82bj.check_mvvm.data.model.ProductModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -28,7 +28,7 @@
             android:id="@+id/toolbar"
             layout="@layout/widget_toolbar"
             app:homeNavClickListener="@{toolbarHomeNavClickListener}"
-            app:title="Check24" />
+            app:title="Check" />
 
         <WebView
             android:id="@+id/webView"

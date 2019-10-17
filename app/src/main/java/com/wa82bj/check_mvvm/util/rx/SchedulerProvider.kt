@@ -1,4 +1,4 @@
-package com.wa82bj.check24_mvvm.util.rx
+package com.wa82bj.check_mvvm.util.rx
 
 import io.reactivex.Scheduler
 

@@ -1,10 +1,10 @@
-package com.wa82bj.check24_mvvm.data.db
+package com.wa82bj.check_mvvm.data.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.wa82bj.check24_mvvm.data.api.response.check24Response.HeaderEntity
-import com.wa82bj.check24_mvvm.data.api.response.check24Response.ProductEntity
+import com.wa82bj.check_mvvm.data.api.response.check24Response.HeaderEntity
+import com.wa82bj.check_mvvm.data.api.response.check24Response.ProductEntity
 
 @Database(
     entities = [
@@ -17,5 +17,5 @@ import com.wa82bj.check24_mvvm.data.api.response.check24Response.ProductEntity
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun check24Dao(): Check24Dao
+    abstract fun check24Dao(): CheckDao
 }

@@ -1,15 +1,15 @@
-package com.wa82bj.check24_mvvm.ui.main.allProduct
+package com.wa82bj.check_mvvm.ui.main.allProduct
 
 import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
 import androidx.databinding.ObservableBoolean
 import androidx.lifecycle.*
-import com.wa82bj.check24_mvvm.data.repository.ProductsRepository
-import com.wa82bj.check24_mvvm.ui.common.toResult
-import com.wa82bj.check24_mvvm.util.ext.map
-import com.wa82bj.check24_mvvm.util.ext.toLiveData
-import com.wa82bj.check24_mvvm.util.rx.SchedulerProvider
+import com.wa82bj.check_mvvm.data.repository.ProductsRepository
+import com.wa82bj.check_mvvm.ui.common.toResult
+import com.wa82bj.check_mvvm.util.ext.map
+import com.wa82bj.check_mvvm.util.ext.toLiveData
+import com.wa82bj.check_mvvm.util.rx.SchedulerProvider
 import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Inject
 

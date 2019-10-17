@@ -1,7 +1,7 @@
-package com.wa82bj.check24_mvvm.ui.detail
+package com.wa82bj.check_mvvm.ui.detail
 
-import com.wa82bj.check24_mvvm.data.api.response.check24Response.ProductEntity
-import com.wa82bj.check24_mvvm.data.db.AppDatabase
+import com.wa82bj.check_mvvm.data.api.response.check24Response.ProductEntity
+import com.wa82bj.check_mvvm.data.db.AppDatabase
 import io.reactivex.Single
 
 

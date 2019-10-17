@@ -1,7 +1,7 @@
-package com.wa82bj.check24_mvvm.data.api.response.check24Response
+package com.wa82bj.check_mvvm.data.api.response.check24Response
 
 
-data class Check24Response(
+data class CheckResponse(
 
     val filters: List<String>,
     val header: HeaderEntity,

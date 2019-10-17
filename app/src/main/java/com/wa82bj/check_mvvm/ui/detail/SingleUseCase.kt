@@ -1,4 +1,4 @@
-package com.wa82bj.check24_mvvm.ui.detail
+package com.wa82bj.check_mvvm.ui.detail
 
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers

@@ -1,13 +1,13 @@
-package com.wa82bj.check24_mvvm.data.db
+package com.wa82bj.check_mvvm.data.db
 
 import androidx.room.*
-import com.wa82bj.check24_mvvm.data.api.response.check24Response.HeaderEntity
-import com.wa82bj.check24_mvvm.data.api.response.check24Response.ProductEntity
+import com.wa82bj.check_mvvm.data.api.response.check24Response.HeaderEntity
+import com.wa82bj.check_mvvm.data.api.response.check24Response.ProductEntity
 import io.reactivex.Flowable
 import io.reactivex.Single
 
 @Dao
-abstract class Check24Dao {
+abstract class CheckDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     abstract fun insert(product: ProductEntity)
