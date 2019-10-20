@@ -64,10 +64,10 @@ class ProductsFragment : DaggerFragment(), RetryAndWebWiewListener {
         initRecyclerView()
 
         if (adapter.itemCount <= 1){
-            loadingType = productViewModel.product
+            loadingType = productViewModel.productDB
             loadProducts()
         }else{
-            loadingType = productViewModel.productDB
+            loadingType = productViewModel.product
             loadProducts()
         }
 

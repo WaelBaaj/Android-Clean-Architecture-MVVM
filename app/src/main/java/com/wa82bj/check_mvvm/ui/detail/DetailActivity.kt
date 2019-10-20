@@ -16,6 +16,7 @@ import com.wa82bj.check_mvvm.ui.webview.WebViewActiviy
 import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
+
 class DetailActivity : DaggerAppCompatActivity() {
 
     private val TAG = DetailActivity::class.java.name
@@ -108,6 +109,7 @@ class DetailActivity : DaggerAppCompatActivity() {
 
     override fun onBackPressed() {
         val intent = Intent(this, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
         finish()
 
