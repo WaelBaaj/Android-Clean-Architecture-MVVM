@@ -5,8 +5,10 @@ import android.content.Context
 import com.wa82bj.check_mvvm.data.api.CheckApi
 import com.wa82bj.check_mvvm.data.db.AppDatabase
 import com.wa82bj.check_mvvm.data.db.CheckDatabase
-import com.wa82bj.check_mvvm.data.repository.ProductsDataRepository
-import com.wa82bj.check_mvvm.data.repository.ProductsRepository
+import com.wa82bj.check_mvvm.data.repository.product.ProductsDataRepository
+import com.wa82bj.check_mvvm.data.repository.product.ProductsRepository
+import com.wa82bj.check_mvvm.data.repository.header.HeaderDataRepository
+import com.wa82bj.check_mvvm.data.repository.header.HeaderRepository
 import com.wa82bj.check_mvvm.ui.detail.DetailRepository
 import com.wa82bj.check_mvvm.ui.detail.ProductRepositoryImp
 import com.wa82bj.check_mvvm.util.rx.AppSchedulerProvider
@@ -47,6 +49,18 @@ object AppModule {
         ProductsDataRepository(
             checkApi,
             checkDatabase,
+            schedulerProvider
+        )
+
+    @Singleton
+    @Provides
+    @JvmStatic
+    fun provideHeaderRepository(
+        checkApi: CheckApi,
+        schedulerProvider: SchedulerProvider
+    ): HeaderRepository =
+        HeaderDataRepository(
+            checkApi,
             schedulerProvider
         )
 }

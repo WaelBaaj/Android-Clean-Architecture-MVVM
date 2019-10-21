@@ -3,6 +3,7 @@ package com.wa82bj.check_mvvm.ui.detail
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.wa82bj.check_mvvm.data.api.response.check24Response.ProductEntity
+import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Inject
 
 
@@ -14,6 +15,7 @@ class DetailViewModel @Inject constructor(
     val productData = MutableLiveData<ProductEntity>()
     val isLoad = MutableLiveData<Boolean>()
     val isFavorite = MutableLiveData<Int>()
+    private val compositeDisposable = CompositeDisposable()
 
     init {
         isLoad.value = false
@@ -51,5 +53,10 @@ class DetailViewModel @Inject constructor(
 
     fun checkFavoriteStatus(fav: Int,productId: Int) {
         isFavorite.value = getProductDetailUseCase.isFavoriteProduct(fav,productId)
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        compositeDisposable.clear()
     }
 }

@@ -1,19 +1,15 @@
-package com.wa82bj.check_mvvm.data.repository
+package com.wa82bj.check_mvvm.data.repository.product
 
 import com.wa82bj.check_mvvm.data.api.CheckApi
-import com.wa82bj.check_mvvm.data.api.response.check24Response.HeaderEntity
 import com.wa82bj.check_mvvm.data.api.response.check24Response.ProductEntity
 import com.wa82bj.check_mvvm.data.db.CheckDatabase
 import com.wa82bj.check_mvvm.data.db.toAvailableProducts
-import com.wa82bj.check_mvvm.data.db.toHeader
 import com.wa82bj.check_mvvm.data.db.toProducts
-import com.wa82bj.check_mvvm.data.model.HeaderModel
 import com.wa82bj.check_mvvm.data.model.ProductModel
 import com.wa82bj.check_mvvm.util.rx.SchedulerProvider
 import io.reactivex.Completable
 import io.reactivex.Flowable
 import io.reactivex.Single
-import io.reactivex.functions.BiFunction
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -29,15 +25,6 @@ class ProductsDataRepository @Inject constructor(
         get() = checkDatabase.getAllProducts()
             .toProducts()
 
-    override fun loadProducts(): Single<List<ProductModel>> =
-        Single.zip(loadProductsApi(), loadProductsDb(), BiFunction { t1, t2 ->
-            if (t1.isNotEmpty()) {
-                val products = ArrayList<ProductModel>()
-                products.addAll(t1)
-                return@BiFunction products.toList()
-            } else return@BiFunction t2
-        })
-
     override fun loadProductsFromDb(): Single<List<ProductModel>> =
         checkDatabase.getProductsLessThanAndEqualPage()
             .map {
@@ -45,14 +32,6 @@ class ProductsDataRepository @Inject constructor(
             }
             .subscribeOn(schedulerProvider.io())
 
-
-
-    private fun loadProductsDb(): Single<List<ProductModel>> =
-        checkDatabase.getProductsLessThanAndEqualPage()
-            .map {
-                return@map it.toProducts()
-            }
-            .subscribeOn(schedulerProvider.io())
 
     override fun loadProductsApi(): Single<List<ProductModel>> =
         api.loadTrendingProducts()
@@ -76,32 +55,6 @@ class ProductsDataRepository @Inject constructor(
             it.onComplete()
         }
 
-
-    // Header Data
-    override val header: Single<HeaderModel>
-        get() = checkDatabase.getHeader()
-            .toHeader()
-
-    override fun loadHeaderFromApi(): Single<HeaderModel> =
-        api.loadTrendingProducts()
-            .map {
-                val newheader = it.header
-                saveHeader(newheader).subscribe()
-                return@map newheader.toHeader()
-
-            }
-            .onErrorReturn { error ->
-                Timber.e(error.toString())
-
-                return@onErrorReturn HeaderModel()
-            }
-            .subscribeOn(schedulerProvider.io())
-
-    override fun saveHeader (header: HeaderEntity): Completable =
-        Completable.create {
-            checkDatabase.saveHeaderEntities(header)
-            it.onComplete()
-        }
 
 
     // Available Products

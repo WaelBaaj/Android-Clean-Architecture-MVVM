@@ -5,15 +5,10 @@ import com.wa82bj.check_mvvm.data.api.response.check24Response.ProductEntity
 import com.wa82bj.check_mvvm.data.model.HeaderModel
 import com.wa82bj.check_mvvm.data.model.ProductModel
 import io.reactivex.Flowable
-import io.reactivex.Single
 
 fun Flowable<List<ProductEntity>>.toProducts(): Flowable<List<ProductModel>> = map {
     return@map it.toProducts()
 }
-
-fun Single<HeaderEntity>.toHeader(): Single<HeaderModel> =
-     toHeader()
-
 
 fun List<ProductEntity>.toProducts(): List<ProductModel> =
     map { ProductModel(it.available,it.fav  , it.description,it.id, it.imageURL, it.longDescription ,it.name ,

@@ -1,6 +1,5 @@
 package com.wa82bj.check_mvvm.data.db
 
-import com.wa82bj.check_mvvm.data.api.response.check24Response.HeaderEntity
 import com.wa82bj.check_mvvm.data.api.response.check24Response.ProductEntity
 import io.reactivex.Flowable
 import io.reactivex.Single
@@ -17,7 +16,6 @@ interface CheckDatabase {
 
         fun getFavoriteProducts(): Single<List<ProductEntity>>
 
-        fun saveHeaderEntities(header: HeaderEntity)
-        fun getHeader(): Single<HeaderEntity>
+
 
     }

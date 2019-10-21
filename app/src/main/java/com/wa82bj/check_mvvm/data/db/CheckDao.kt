@@ -1,7 +1,6 @@
 package com.wa82bj.check_mvvm.data.db
 
 import androidx.room.*
-import com.wa82bj.check_mvvm.data.api.response.check24Response.HeaderEntity
 import com.wa82bj.check_mvvm.data.api.response.check24Response.ProductEntity
 import io.reactivex.Flowable
 import io.reactivex.Single
@@ -28,14 +27,6 @@ abstract class CheckDao {
 
     @Query("DELETE FROM product_table")
     abstract fun deleteAll()
-
-
-    // Header
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract fun insertHeader(header: HeaderEntity)
-
-    @Query("SELECT * FROM header_table")
-    abstract fun getHeader(): Single<HeaderEntity>
 
     // Available Products
     @Query("SELECT * FROM product_table where available_product = 1")

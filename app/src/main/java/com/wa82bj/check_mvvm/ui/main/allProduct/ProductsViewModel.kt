@@ -5,7 +5,8 @@ import android.content.Context
 import android.net.ConnectivityManager
 import androidx.databinding.ObservableBoolean
 import androidx.lifecycle.*
-import com.wa82bj.check_mvvm.data.repository.ProductsRepository
+import com.wa82bj.check_mvvm.data.repository.header.HeaderRepository
+import com.wa82bj.check_mvvm.data.repository.product.ProductsRepository
 import com.wa82bj.check_mvvm.ui.common.toResult
 import com.wa82bj.check_mvvm.util.ext.map
 import com.wa82bj.check_mvvm.util.ext.toLiveData
@@ -16,9 +17,10 @@ import javax.inject.Inject
 
 class ProductsViewModel @Inject constructor(
     private val repository: ProductsRepository,
+    private val headerRepository: HeaderRepository,
     application: Application,
     private val schedulerProvider: SchedulerProvider
-) : ViewModel(), LifecycleObserver {
+) : ViewModel() {
 
     private val compositeDisposable = CompositeDisposable()
     private val page = MutableLiveData<Int>()
@@ -35,7 +37,7 @@ class ProductsViewModel @Inject constructor(
 
     private val _product = Transformations
         .switchMap(page) { page ->
-            return@switchMap repository.loadProducts()
+            return@switchMap repository.loadProductsApi()
                 .toResult(schedulerProvider)
                 .toLiveData()
         }
@@ -52,7 +54,7 @@ class ProductsViewModel @Inject constructor(
 
 
     private val _header =
-        repository.loadHeaderFromApi()
+        headerRepository.loadHeaderFromApi()
                 .toResult(schedulerProvider)
                 .toLiveData()
 

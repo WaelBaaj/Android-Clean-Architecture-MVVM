@@ -2,7 +2,7 @@ package com.wa82bj.check_mvvm.ui.main.favorite
 
 import androidx.databinding.ObservableBoolean
 import androidx.lifecycle.*
-import com.wa82bj.check_mvvm.data.repository.ProductsRepository
+import com.wa82bj.check_mvvm.data.repository.product.ProductsRepository
 import com.wa82bj.check_mvvm.ui.common.toResult
 import com.wa82bj.check_mvvm.util.ext.map
 import com.wa82bj.check_mvvm.util.ext.toLiveData
@@ -14,7 +14,7 @@ import javax.inject.Inject
 class FavoriteViewModel @Inject constructor(
     private val repository: ProductsRepository,
     private val schedulerProvider: SchedulerProvider
-) : ViewModel(), LifecycleObserver {
+) : ViewModel() {
 
     private val compositeDisposable = CompositeDisposable()
     private val page = MutableLiveData<Int>()

@@ -1,7 +1,6 @@
 package com.wa82bj.check_mvvm.data.db
 
 import androidx.room.RoomDatabase
-import com.wa82bj.check_mvvm.data.api.response.check24Response.HeaderEntity
 import com.wa82bj.check_mvvm.data.api.response.check24Response.ProductEntity
 import io.reactivex.Flowable
 import io.reactivex.Single
@@ -61,16 +60,5 @@ class CheckRoomDatabase @Inject constructor(
     override fun updateFavoriteProducts(fav : Int,productId : Int) =
         checkDao.update(fav , productId)
 
-    override fun saveHeaderEntities(header: HeaderEntity) {
-        database.runInTransaction {
 
-                checkDao.insertHeader(header)
-
-        }    }
-
-    override fun getHeader(): Single<HeaderEntity> =
-        checkDao.getHeader()
-
-
-
-}
+    }

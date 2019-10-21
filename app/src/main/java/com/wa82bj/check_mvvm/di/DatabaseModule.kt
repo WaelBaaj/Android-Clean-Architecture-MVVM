@@ -19,11 +19,9 @@ class DatabaseModule {
             .fallbackToDestructiveMigration()
             .build()
 
-
     @Singleton
     @Provides
     fun provideCheckDao(db: AppDatabase): CheckDao = db.check24Dao()
-
 
 
     @Singleton
